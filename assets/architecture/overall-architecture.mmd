@@ -1,0 +1,32 @@
+flowchart TB
+    U[用户与业务角色]
+
+    subgraph C[场景能力层]
+        SO[服务运营智能]
+        KI[企业知识智能]
+        GC[生成式内容服务]
+    end
+
+    subgraph B[业务控制层]
+        IAM[身份与权限]
+        STATE[规则、状态与人工确认]
+        API[API、文件与审计]
+    end
+
+    subgraph A[AI 能力与治理底座]
+        ORCH[工作流与对话编排]
+        RAG[RAG 与上下文管理]
+        MODEL[语言、向量、重排与媒体模型]
+        OBS[评测、监控、版本与回退]
+    end
+
+    subgraph D[数据与集成层]
+        DATA[业务数据]
+        KNOW[知识与向量索引]
+        OBJ[对象存储]
+        EXT[企业系统与标准接口]
+    end
+
+    U --> C --> B --> A
+    B --> D
+    A --> D
